@@ -35,11 +35,7 @@ func SetOutputFile(path string, nameFormatter string, timeFormatter string) {
 		panic(err)
 	}
 	if nil != std.Out {
-		if nil != file {
-			std.SetOutput(io.MultiWriter([]io.Writer{file, localWriter}...))
-		} else {
-			std.SetOutput(io.MultiWriter([]io.Writer{file, os.Stdout}...))
-		}
+		std.SetOutput(io.MultiWriter([]io.Writer{file, os.Stdout}...))
 	} else {
 		std.SetOutput(file)
 	}
