@@ -52,7 +52,7 @@ func SetOutputFile(path string, nameFormatter string, timeFormatter string) {
 func chooseFile() {
 	if chooseFileFlg {
 		timeF := time.Now().Format(timeStr)
-		if file != nil && timeF != timeFlag {
+		if timeF != timeFlag {
 			SetOutputFile(pathStr, nameStr, timeStr)
 		}
 	}
